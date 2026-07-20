@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.instrumentl.com/.well-known/oauth-authorization-server
+docs: https://mcp.instrumentl.com/.well-known/oauth-protected-resource
+summary:
+  types: [oauth2, apiKey]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode]
+schemes:
+  - name: OAuth2
+    type: oauth2
+    flows:
+      authorizationCode:
+        authorizationUrl: https://www.instrumentl.com/oauth/authorize
+        tokenUrl: https://www.instrumentl.com/oauth/token
+        refreshUrl: https://www.instrumentl.com/oauth/token
+        scopes:
+          mcp:read: Read access via the MCP server
+          mcp:write: Write access via the MCP server
+    pkce: S256
+    token_endpoint_auth_methods_supported: [none]      # public client (PKCE)
+    dynamic_client_registration: https://www.instrumentl.com/oauth/register
+    sources: [https://www.instrumentl.com/.well-known/oauth-authorization-server]
+  - name: ApiKeyAuth
+    type: http
+    scheme: bearer
+    description: >-
+      The remote MCP server also accepts a valid API key as a bearer token
+      (unauthenticated calls return "You must authenticate with a valid API key
+      to proceed"). Bearer credentials are sent in the Authorization header.
+    in: header
+    sources: [https://mcp.instrumentl.com]
+notes: >-
+  Derived by search of Instrumentl's OAuth discovery documents (no OpenAPI is
+  published). Access to the MCP server is gated by OAuth 2.0 authorization-code
+  + PKCE with dynamic client registration and refresh tokens, or a bearer API
+  key. Security contact: security@instrumentl.com.

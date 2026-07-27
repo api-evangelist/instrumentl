@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.instrumentl.com/.well-known/
+hosts:
+  - host: https://instrumentl.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: instrumentl-security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 400
+  - host: https://www.instrumentl.com
+    documents:
+      - path: /.well-known/oauth-authorization-server   # RFC 8414
+        status: 200
+        file: instrumentl-oauth-authorization-server.json
+  - host: https://mcp.instrumentl.com
+    documents:
+      - path: /.well-known/oauth-protected-resource     # RFC 9728
+        status: 200
+        file: instrumentl-oauth-protected-resource.json
+notes: >-
+  The OAuth authorization-server and protected-resource documents are the
+  discovery surface for Instrumentl's remote MCP server (mcp.instrumentl.com).
+  scopes_supported = mcp:read, mcp:write; PKCE S256; dynamic client registration
+  is offered at /oauth/register.

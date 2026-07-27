@@ -1,0 +1,26 @@
+# Instrumentl
+
+> Instrumentl is the all-in-one grant management platform for nonprofits. It helps organizations discover, apply for, and manage grants across the full funding lifecycle — from prospecting to post-award compliance.
+
+Instrumentl serves 5,500+ nonprofit clients including universities, hospitals, community organizations, and grant writing consultants.
+
+## Product
+
+- [Product Overview](https://www.instrumentl.com/product-overview): Full platform overview covering the Discover, Apply, and Manage capabilities
+- [Discover](https://www.instrumentl.com/capability/discover): AI-powered grant prospecting that matches organizations with best-fit funding opportunities
+- [Apply](https://www.instrumentl.com/capability/apply): AI-assisted proposal drafting trained on an organization's own winning proposals and Instrumentl's funder insights
+- [Manage](https://www.instrumentl.com/capability/manage): Post-award grant administration including spend-down tracking, compliance monitoring, and deadline management
+- [Pricing](https://www.instrumentl.com/pricing): Plans for nonprofits (Standard, Pro, Advanced) and consultants, starting at $299/month
+
+## Databases
+
+- [Grants Database](https://www.instrumentl.com/browse-grants): The largest online database of 35,000+ active grant opportunities, searchable by focus area, geographic location, and grant type (corporate, private foundation, federal, state/local government).
+- [Foundation Directory](https://www.instrumentl.com/foundations): 450,000+ funder profiles with advanced insights drawn from IRS Form 990 filings, including historical giving trends, past grantees, average grant sizes, and funder openness to new applicants. Browsable by funding category, geography, and total giving.
+- [990 Reports](eg https://www.instrumentl.com/990-report/stephen-mary-birch-foundation-inc): Detailed 990 filing data and analysis for U.S. private foundations, covering financials, board members, and grantmaking history
+
+## Resources
+
+- [Customer Stories](https://www.instrumentl.com/customers): Case studies from nonprofits and universities showing how they use Instrumentl to save time and increase grant funding
+- [Blog](https://www.instrumentl.com/blog): Articles on grant writing, fundraising strategy, and nonprofit management
+- [Guides](https://www.instrumentl.com/guides): Downloadable ebooks and how-to guides for grant professionals
+- [Newsletter](https://www.instrumentl.com/newsletter): Biweekly updates on workshops, events, and grant tips

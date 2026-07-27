@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://status.instrumentl.com
+status_page: https://status.instrumentl.com
+versioning:
+  scheme: unversioned
+  notes: >-
+    No public REST API/OpenAPI is published, so there is no API version scheme.
+    The MCP server emits an x-revision build marker (e.g. v2.202607172252.3093),
+    which is a deploy revision, not a supported API version.
+deprecation:
+  policy_url: null            # no published deprecation/sunset policy
+  sunset_header: false
+sla:
+  url: null
+deprecated_operations: []
+notes: >-
+  Only a status page was found. No deprecation policy or SLA is published, so no
+  Deprecation pointer is emitted — only StatusPage.

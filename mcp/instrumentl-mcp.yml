@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://mcp.instrumentl.com
+server:
+  name: instrumentl
+  transport: http                       # Streamable HTTP (JSON-RPC over HTTPS)
+  url: https://mcp.instrumentl.com
+authorization:
+  type: oauth2
+  protected_resource: https://mcp.instrumentl.com
+  authorization_servers:
+    - https://www.instrumentl.com
+  authorization_endpoint: https://www.instrumentl.com/oauth/authorize
+  token_endpoint: https://www.instrumentl.com/oauth/token
+  registration_endpoint: https://www.instrumentl.com/oauth/register   # RFC 7591 dynamic client registration
+  revocation_endpoint: https://www.instrumentl.com/oauth/revoke
+  introspection_endpoint: https://www.instrumentl.com/oauth/introspect
+  grant_types_supported: [authorization_code, refresh_token]
+  code_challenge_methods_supported: [S256]
+  bearer_methods_supported: [header]
+  scopes_supported: [mcp:read, mcp:write]
+tools: []                               # server requires OAuth; tool list not enumerable without a valid bearer token
+notes: >-
+  Instrumentl publishes an authenticated remote MCP server. Unauthenticated
+  requests return HTTP 401 ("You must authenticate with a valid API key to
+  proceed"); the /.well-known/oauth-protected-resource and
+  /.well-known/oauth-authorization-server documents advertise the OAuth 2.0
+  (authorization code + PKCE + refresh, with dynamic client registration) flow
+  gating access. The tools[] list is intentionally empty because it cannot be
+  read without authenticating; this is a real, published server, not a derived
+  candidate.

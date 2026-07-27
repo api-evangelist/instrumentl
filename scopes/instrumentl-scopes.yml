@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://mcp.instrumentl.com/.well-known/oauth-protected-resource
+docs: https://www.instrumentl.com/.well-known/oauth-authorization-server
+schemes:
+  - name: OAuth2
+    source: https://www.instrumentl.com/.well-known/oauth-authorization-server
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://www.instrumentl.com/oauth/authorize
+        tokenUrl: https://www.instrumentl.com/oauth/token
+        refreshUrl: https://www.instrumentl.com/oauth/token
+        pkce: S256
+scopes:
+  - scope: mcp:read
+    description: Read access to Instrumentl data via the remote MCP server (mcp.instrumentl.com).
+    flows: [authorizationCode]
+    sources: [https://mcp.instrumentl.com/.well-known/oauth-protected-resource]
+  - scope: mcp:write
+    description: Write access to Instrumentl data via the remote MCP server (mcp.instrumentl.com).
+    flows: [authorizationCode]
+    sources: [https://mcp.instrumentl.com/.well-known/oauth-protected-resource]
+notes: >-
+  Scopes are the two MCP scopes advertised by the OAuth authorization-server and
+  protected-resource discovery documents. Instrumentl publishes no public REST
+  API/OpenAPI, so these OAuth scopes govern the MCP surface only.

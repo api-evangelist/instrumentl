@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://mcp.instrumentl.com
+summary: >-
+  Cross-cutting conventions for Instrumentl's agent surface. Instrumentl exposes
+  no public REST API/OpenAPI; its programmatic surface is a remote MCP server
+  (mcp.instrumentl.com) gated by OAuth 2.0. Conventions below describe that
+  surface.
+authentication:
+  style: oauth2-bearer
+  detail: >-
+    OAuth 2.0 authorization-code + PKCE (S256) with refresh tokens and RFC 7591
+    dynamic client registration; scopes mcp:read / mcp:write. Bearer API keys are
+    also accepted in the Authorization header.
+  ref: authentication/instrumentl-authentication.yml
+transport:
+  protocol: MCP over Streamable HTTP (JSON-RPC 2.0)
+  endpoint: https://mcp.instrumentl.com
+  content_type: application/json
+  accept: application/json, text/event-stream
+idempotency:
+  supported: false            # no documented idempotency-key contract
+pagination:
+  supported: unknown          # not enumerable without authenticating to the MCP server
+error_envelope:
+  shape: '{"errors": ["message", ...]}'
+  example: '{"errors":["You must authenticate with a valid API key to proceed"]}'
+  source: https://mcp.instrumentl.com
+request_tracing:
+  request_id_header: x-request-id      # observed on server responses
+versioning:
+  scheme: unversioned-endpoint
+  server_revision_header: x-revision   # e.g. v2.202607172252.3093 (build marker, not an API version)
+rate_limit_signaling:
+  documented: false
+notes: >-
+  Idempotency is NOT supported/advertised, so no Idempotency pointer is emitted.
+  Cross-links: authentication/, scopes/, security/, well-known/.

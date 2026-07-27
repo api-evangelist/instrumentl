@@ -1,25 +1,110 @@
 aid: instrumentl
 name: Instrumentl
-description: Instrumentl is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Instrumentl is the all-in-one grant management platform for nonprofits and
+  grant-writing consultants, helping 5,500+ organizations discover, apply for,
+  and manage grants across the full funding lifecycle. Its Discover capability
+  uses AI-powered matching across 35,000+ active grant opportunities; Apply
+  provides AI-assisted proposal drafting trained on an organization's own
+  winning proposals and funder insights; and Manage handles post-award
+  administration, spend-down tracking, compliance monitoring, and deadline
+  management. Instrumentl maintains a grants database and a 450,000+ funder
+  Foundation Directory built from IRS Form 990 filings, and exposes an
+  authenticated remote MCP server (mcp.instrumentl.com) for agent access.
 url: https://raw.githubusercontent.com/api-evangelist/instrumentl/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://static-assets.instrumentl.com/assets/open-graph-image-7aeb77fce8b2e99a998345583d30006a4f24546304a720cb2a2c7c97372f6212.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Grants
+- Nonprofit
+- Fundraising
+- Grant Management
+- Foundation Data
+- Philanthropy
+- MCP
+apis:
+- name: Instrumentl MCP Server
+  description: >-
+    Instrumentl's authenticated remote Model Context Protocol (MCP) server,
+    exposing the grant-management platform to AI agents. Access is gated by
+    OAuth 2.0 (authorization code + PKCE, dynamic client registration) with
+    mcp:read / mcp:write scopes.
+  humanURL: https://www.instrumentl.com/product-overview
+  baseURL: https://mcp.instrumentl.com
+  properties:
+  - type: MCPServer
+    url: mcp/instrumentl-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/instrumentl-mcp.yml
+- type: Authentication
+  url: authentication/instrumentl-authentication.yml
+- type: OAuthScopes
+  url: scopes/instrumentl-scopes.yml
+- type: Conventions
+  url: conventions/instrumentl-conventions.yml
+- type: LLMsTxt
+  url: llms/instrumentl-llms.txt
+- type: WellKnown
+  url: well-known/instrumentl-well-known.yml
+- type: SecurityTxt
+  url: well-known/instrumentl-security.txt
+- type: Lifecycle
+  url: lifecycle/instrumentl-lifecycle.yml
+- type: StatusPage
+  url: https://status.instrumentl.com
+- type: VulnerabilityDisclosure
+  url: security/instrumentl-vulnerability-disclosure.yml
+- type: Security
+  url: https://instrumentl.com/.well-known/security.txt
+- type: DomainSecurity
+  url: security/instrumentl-domain-security.yml
+- type: Support
+  url: https://help.instrumentl.com
+- type: Blog
+  url: https://www.instrumentl.com/blog
+- type: GitHubOrganization
+  url: https://github.com/instrumentl
+- type: Pricing
+  url: https://www.instrumentl.com/pricing
+- type: SignUp
+  url: https://www.instrumentl.com/signup
+- type: Login
+  url: https://www.instrumentl.com/login
+- type: TermsOfService
+  url: https://www.instrumentl.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.instrumentl.com/privacy-policy
 - type: Website
   url: https://instrumentl.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

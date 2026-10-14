@@ -1,0 +1,35 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- https://mpl-pusa01.app.blackbaud.net/mktpl/v1/public/marketplace/applications
+source:
+- https://mpl-pusa01.app.blackbaud.net/mktpl/v1/public/marketplace/applications
+marketplace_apps: []
+edges:
+- partner_name: Blackbaud (Blackbaud Marketplace)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  partner_note: Blackbaud has no all/* repo (catalog gap); publisher side only
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: blackbaud-marketplace
+  evidence: https://app.blackbaud.com/marketplace/applications/d5c304f7-dce4-4e02-9fd8-51b21d4fb70a
+  store: https://app.blackbaud.com/marketplace
+  store_api: https://mpl-pusa01.app.blackbaud.net/mktpl/v1/public/marketplace/applications
+  publisher: Instrumentl
+  publisher_match: domain
+  publisher_domain: instrumentl.com
+  apps:
+  - Instrumentl - Financial Edge NXT
+  - 'Instrumentl - Raiser''s Edge '
+  listing_count: 2
+  compatible_solutions:
+  - fenxt
+  - renxt
+  badges:
+  - Reviewed by Blackbaud
+  detected_by: sweep-nonprofit.py
+  detected: '2026-10-14'
